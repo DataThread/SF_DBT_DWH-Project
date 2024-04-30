@@ -1,0 +1,39 @@
+version: 2
+
+sources:
+  - name: BusinessOperations
+    database: SF_DBT_DWH_DB
+    schema: RAW
+    tables:
+
+    - name: Customers
+      description: "Raw customer data, initially loaded from operational systems."
+
+    - name: Products
+      description: "Initial product listings, including categories and pricing."
+
+    - name: Sales
+      description: "Sales transactions capturing product, customer, and amounts."
+
+    - name: Stores
+      description: "Store locations and their respective managers."
+
+    - name: Time
+      description: "Dimension table for handling time-related aspects in analysis."
+
+    - name: Employee
+      description: "Information about employees across different departments."
+
+    - name: Employee_Sales
+      description: "Linking table for employees and sales to track sales performance."
+
+    - name: Promotions
+      description: "Marketing promotions with start and end dates."
+
+    - name: Sales_Promotions
+      description: "Mapping table for sales and the promotions applied to them."
+
+    - name: Inventory_Snapshot
+      description: "Snapshot data for inventory available at various store locations."
+
+

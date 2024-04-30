@@ -1,0 +1,12 @@
+version: 2
+
+seeds:
+  - name: regions
+    description: "Seed data for regions, containing identifiers and descriptions."
+    columns:
+      - name: Region_ID
+        description: "Unique identifier for the region."
+      - name: Region_Name
+        description: "Name of the region."
+      - name: Description
+        description: "Description of what the region includes."

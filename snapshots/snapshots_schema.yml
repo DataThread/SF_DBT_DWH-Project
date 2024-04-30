@@ -1,0 +1,20 @@
+version: 2
+
+snapshots:
+  - name: snapshot_customers
+    description: "Snapshot of customer data tracking changes using check columns strategy."
+    columns:
+      - name: Customer_ID
+        description: "Unique identifier for a customer."
+      - name: Email
+        description: "Customer's email address, used as a check column."
+      - name: Address
+        description: "Customer's physical address, used as a check column."
+
+  - name: snapshot_sales
+    description: "Snapshot of sales data tracking changes using a timestamp strategy."
+    columns:
+      - name: Sale_ID
+        description: "Unique identifier for a sale."
+      - name: last_updated
+        description: "Timestamp column used to identify updates."

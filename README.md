@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # SF_DBT_DWH Project
 
 Welcome to the SF_DBT_DWH project repository! This project focuses on building a data warehouse using dbt (data build tool) on Snowflake. It includes staging, operational data store (ODS), and data mart (DM) layers along with various models and transformations.
@@ -56,3 +57,20 @@ The project is configured using the `dbt_project.yml` file, which specifies mode
 For any inquiries or issues, feel free to reach out to the project maintainers.
 
 Happy modeling!
+=======
+Welcome to your new dbt project!
+
+### Using the starter project
+
+Try running the following commands:
+- dbt run
+- dbt test
+
+
+### Resources:
+- Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
+- Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
+- Join the [chat](https://community.getdbt.com/) on Slack for live discussions and support
+- Find [dbt events](https://events.getdbt.com) near you
+- Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
+>>>>>>> f499807 ("first commit")

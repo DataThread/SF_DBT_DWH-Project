@@ -1,0 +1,7 @@
+Region_ID,Region_Name,Description
+1,North,"Includes Delhi, Haryana, Punjab, and UP"
+2,South,"Includes Karnataka, Kerala, Tamil Nadu, and Andhra Pradesh"
+3,East,"Includes West Bengal, Orissa, Bihar, and Jharkhand"
+4,West,"Includes Maharashtra, Goa, Gujarat, and Rajasthan"
+5,Central,"Includes Madhya Pradesh, Chhattisgarh"
+6,Northeast,"Includes Assam, Tripura, Meghalaya, and others"

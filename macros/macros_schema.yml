@@ -1,0 +1,7 @@
+version: 2
+
+macros:
+  - name: calculate_growth
+    description: "Calculates the percentage growth between two values."
+  - name: standardize_email
+    description: "Standardizes email addresses to lowercase and trims any extra whitespace."

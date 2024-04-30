@@ -1,0 +1,252 @@
+version: 2
+
+models:
+  - name: stg_customers
+    description: "Staging view for customer data from BusinessOperations database."
+    columns:
+      - name: Customer_ID
+        description: "Unique identifier for a customer."
+        tests:
+          - not_null
+          - unique
+      - name: Customer_Code
+        description: "Code assigned to the customer."
+        tests:
+          - not_null
+      - name: Name
+        description: "Customer's full name."
+      - name: Email
+        description: "Customer's email address."
+        tests:
+          - not_null
+      - name: Address
+        description: "Customer's physical address."
+      - name: Date_Created
+        description: "Date the customer record was created."
+      - name: Date_Modified
+        description: "Date the customer record was last modified."
+      - name: Effective_Date
+        description: "Date the customer information became effective."
+      - name: Expiry_Date
+        description: "Date the customer information expires."
+      - name: is_current
+        description: "Boolean indicating if the record is the current active record."
+      - name: valid_from
+        description: "Timestamp indicating when the record became active."
+      - name: valid_to
+        description: "Timestamp indicating when the record was superseded."
+      - name: last_updated
+        description: "Timestamp of the last update to the record."
+
+  - name: stg_employee
+    description: "Staging view for employee data from BusinessOperations database."
+    columns:
+      - name: Employee_ID
+        description: "Unique identifier for an employee."
+        tests:
+          - not_null
+          - unique
+      - name: First_Name
+        description: "Employee's first name."
+      - name: Last_Name
+        description: "Employee's last name."
+      - name: Email
+        description: "Employee's email address."
+        tests:
+          - not_null
+      - name: Department
+        description: "Department the employee works in."
+      - name: is_current
+        description: "Boolean indicating if the employee record is current."
+      - name: valid_from
+        description: "Timestamp when the employee record became active."
+      - name: valid_to
+        description: "Timestamp when the employee record was superseded."
+      - name: last_updated
+        description: "Timestamp of the last update to the record."
+
+  - name: stg_employee_sales
+    description: "Staging view for linking employees to sales from BusinessOperations database."
+    columns:
+      - name: Employee_ID
+        description: "Employee identifier linked to a sale."
+      - name: Sale_ID
+        description: "Sale identifier linked to an employee."
+      - name: is_current
+        description: "Boolean indicating if the link is current."
+      - name: valid_from
+        description: "Timestamp when the link became active."
+      - name: valid_to
+        description: "Timestamp when the link was deactivated."
+      - name: last_updated
+        description: "Timestamp of the last update to the link."
+
+  - name: stg_inventory_snapshot
+    description: "Staging view for inventory snapshots from BusinessOperations database."
+    columns:
+      - name: Product_ID
+        description: "Identifier of the product in the inventory snapshot."
+      - name: Store_ID
+        description: "Identifier of the store in the inventory snapshot."
+      - name: Snapshot_Date
+        description: "Date when the inventory snapshot was taken."
+      - name: Quantity_Available
+        description: "Quantity of the product available in the store on the snapshot date."
+      - name: is_current
+        description: "Boolean indicating if the sale record is current."
+      - name: valid_from
+        description: "Timestamp when the inventory snapshot record became active."
+      - name: valid_to
+        description: "Timestamp when the inventory snapshot record was superseded."
+      - name: last_updated
+        description: "Timestamp of the last update to the inventory snapshot record."
+
+  - name: stg_products
+    description: "Staging view for product data from BusinessOperations database."
+    columns:
+      - name: Product_ID
+        description: "Unique identifier for a product."
+        tests:
+          - not_null
+          - unique
+      - name: Product_Name
+        description: "Name of the product."
+      - name: Category
+        description: "Category of the product."
+      - name: Price
+        description: "Price of the product."
+      - name: Date_Added
+        description: "Date the product was added to the inventory."
+      - name: Date_Modified
+        description: "Date the product record was last modified."
+      - name: is_current
+        description: "Boolean indicating if the product record is current."
+      - name: valid_from
+        description: "Timestamp when the product record became active."
+      - name: valid_to
+        description: "Timestamp when the product record was superseded."
+      - name: last_updated
+        description: "Timestamp of the last update to the product record."
+
+  - name: stg_promotions
+    description: "Staging view for promotions data from BusinessOperations database."
+    columns:
+      - name: Promotion_ID
+        description: "Unique identifier for a promotion."
+        tests:
+          - not_null
+          - unique
+      - name: Promotion_Name
+        description: "Name of the promotion."
+      - name: Start_Date
+        description: "Start date of the promotion."
+      - name: End_Date
+        description: "End date of the promotion."
+      - name: is_current
+        description: "Boolean indicating if the promotion is currently active."
+      - name: valid_from
+        description: "Timestamp when the promotion became active."
+      - name: valid_to
+        description: "Timestamp when the promotion was superseded."
+      - name: last_updated
+        description: "Timestamp of the last update to the promotion record."
+
+  - name: stg_sales_promotions
+    description: "Staging view for sales promotions data from BusinessOperations database."
+    columns:
+      - name: Sale_ID
+        description: "Identifier of the sale linked to a promotion."
+      - name: Promotion_ID
+        description: "Identifier of the promotion applied to the sale."
+      - name: Applied_Date
+        description: "Date when the promotion was applied to the sale."
+      - name: is_current
+        description: "Boolean indicating if the link between sale and promotion is current."
+      - name: valid_from
+        description: "Timestamp when the link became active."
+      - name: valid_to
+        description: "Timestamp when the link was deactivated."
+      - name: last_updated
+        description: "Timestamp of the last update to the sales promotion link."
+
+  - name: stg_sales
+    description: "Staging view for sales data from BusinessOperations database."
+    columns:
+      - name: Sale_ID
+        description: "Unique identifier for a sale."
+        tests:
+          - not_null
+          - unique
+      - name: Product_ID
+        description: "Identifier of the product sold."
+      - name: Customer_ID
+        description: "Identifier of the customer who made the purchase."
+      - name: Store_ID
+        description: "Identifier of the store where the sale occurred."
+      - name: Sale_Date
+        description: "Date when the sale occurred."
+      - name: Quantity
+        description: "Quantity of products sold."
+      - name: Total_Amount
+        description: "Total amount of the sale."
+      - name: is_current
+        description: "Boolean indicating if the sale record is current."
+      - name: valid_from
+        description: "Timestamp when the sale record became active."
+      - name: valid_to
+        description: "Timestamp when the sale record was superseded."
+      - name: last_updated
+        description: "Timestamp of the last update to the sale record."
+
+  - name: stg_stores
+    description: "Staging view for store data from BusinessOperations database."
+    columns:
+      - name: Store_ID
+        description: "Unique identifier for a store."
+        tests:
+          - not_null
+          - unique
+      - name: Store_Name
+        description: "Name of the store."
+      - name: Location
+        description: "Physical location of the store."
+      - name: Manager
+        description: "Manager of the store."
+      - name: is_current
+        description: "Boolean indicating if the store record is current."
+      - name: valid_from
+        description: "Timestamp when the store record became active."
+      - name: valid_to
+        description: "Timestamp when the store record was superseded."
+      - name: last_updated
+        description: "Timestamp of the last update to the store record."
+
+  - name: stg_time
+    description: "Staging view for time data from BusinessOperations database."
+    columns:
+      - name: Time_ID
+        description: "Unique identifier for a record in the time dimension."
+        tests:
+          - not_null
+          - unique
+      - name: Date
+        description: "Date value for the time dimension."
+      - name: Weekday
+        description: "Day of the week."
+      - name: Month
+        description: "Month of the year."
+      - name: Year
+        description: "Year value."
+      - name: Is_Holiday
+        description: "Boolean indicating if the date is a holiday."
+      - name: is_current
+        description: "Boolean indicating if the time record is current."
+      - name: valid_from
+        description: "Timestamp when the time record became active."
+      - name: valid_to
+        description: "Timestamp when the time record was superseded."
+      - name: last_updated
+        description: "Timestamp of the last update to the time record."
+
+
+
