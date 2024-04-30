@@ -26,4 +26,5 @@ FROM (
         last_updated
     FROM {{ ref('stg_sales') }}
 ) sales_data
+
 GROUP BY sale_date, product_id, store_id
