@@ -1,6 +1,4 @@
-
 --- dm_monthly_sales_performance.sql
-
 {{ config(
     materialized='incremental',
     schema='DM',
