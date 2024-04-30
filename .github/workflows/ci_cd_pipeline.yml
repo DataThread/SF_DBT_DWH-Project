@@ -26,7 +26,7 @@ jobs:
       env:
         DBT_ACCOUNT: 'rm31623.central-india.azure'  # Snowflake account from your profile
         DBT_USER: 'arka09'  # Snowflake user from your profile
-        DBT_PASSWORD: '${{ secrets.SNOWFLAKE_PASSWORD }}'  # Use GitHub secrets for sensitive data
+        DBT_PASSWORD: '${{secrets.SNOWFLAKE_PASSWORD}}'  # Use GitHub secrets for sensitive data
         DBT_ROLE: 'ACCOUNTADMIN'  # Snowflake role from your profile
         DBT_WAREHOUSE: 'COMPUTE_WH'  # Snowflake warehouse from your profile
         DBT_DATABASE: 'SF_DBT_DWH_DB'  # Snowflake database from your profile
