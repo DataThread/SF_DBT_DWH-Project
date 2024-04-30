@@ -3,6 +3,7 @@
 {{ config(materialized='view', schema='DM') }}
 
 SELECT
+
     c.customer_id,
     c.name,
     c.email,
