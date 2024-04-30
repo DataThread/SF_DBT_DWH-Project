@@ -18,6 +18,7 @@ GROUP BY TO_CHAR(s.sale_date, 'YYYY-MM')
 {% if is_incremental() %}
     -- This filter will only apply in incremental runs
     WHERE s.sale_date >= (SELECT MAX(sale_date) FROM {{ this }})
+    
 {% endif %}
 
 
