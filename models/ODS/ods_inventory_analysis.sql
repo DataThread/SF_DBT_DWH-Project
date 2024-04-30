@@ -13,5 +13,6 @@ SELECT
     MIN(valid_from) AS valid_from,
     MAX(valid_to) AS valid_to,
     MAX(last_updated) AS last_updated
+    
 FROM {{ ref('stg_inventory_snapshot') }}
 GROUP BY product_id, store_id, snapshot_date

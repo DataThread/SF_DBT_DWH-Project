@@ -1,4 +1,5 @@
 -- ods_daily_product_sales.sql
+
 {{ config(materialized='view', schema='ODS') }}
 
 SELECT
