@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: sales_trends
+    description: "Analyzes sales trends over time, providing insights into patterns and growth."
+    columns:
+      - name: year
+        description: "Year of the sales data."
+      - name: month
+        description: "Month of the sales data."
+      - name: total_sales
+        description: "Total sales amount for each month."
+
+  - name: product_margins
+    description: "Calculates product margins by comparing sales revenue to the cost of goods sold."
+    columns:
+      - name: product_id
+        description: "Identifier for the product."
+      - name: product_name
+        description: "Name of the product."
+      - name: margin
+        description: "Calculated margin for the product."
