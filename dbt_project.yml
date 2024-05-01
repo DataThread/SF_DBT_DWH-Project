@@ -1,6 +1,6 @@
 # Name your project! Project names should contain only lowercase characters
 # and underscores. A good package name should reflect your organization's
-# name or the intended use of these models
+# name or the intended use of these models.
 name: 'SF_DBT_DWH_09'
 version: '1.0.0'
 config-version: 2
@@ -23,8 +23,6 @@ clean-targets:         # directories to be removed by `dbt clean`
   - "dbt_packages"
 
 # Configuring models
-# Full documentation: https://docs.getdbt.com/docs/configuring-models
-
 models:
   SF_DBT_DWH_09:
     pre-hook:
@@ -55,3 +53,19 @@ models:
       +schema: tmp
       +persist_docs:
         relation: true
+
+
+# Configuration for snapshots
+snapshots:
+  SF_DBT_DWH_09:
+    target_schema: snapshots
+    snapshot_customers:
+      target_schema: snapshots  # Optionally specify a schema; if not, defaults to `snapshots`
+      unique_key: 'Customer_ID'
+      strategy: 'check'
+      check_cols: ['Email', 'Address']
+    snapshot_sales:
+      target_schema: snapshots
+      unique_key: 'Sale_ID'
+      strategy: 'timestamp'
+      updated_at: 'last_updated'
