@@ -1,14 +1,6 @@
-name: dbt CI/CD Pipeline
-
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
-
 jobs:
   dbt_run:
-    runs-on: windows-latest
+    runs-on: windows-latest  # Ensure you're using a Windows runner
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
@@ -16,15 +8,20 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: '3.11.5'
+        python-version: '3.8'
 
     - name: Install dbt
       run: pip install dbt-snowflake
 
+    - name: Create dbt profile directory
+      run: |
+        New-Item -Path "$env:USERPROFILE\.dbt" -ItemType Directory -Force
+        New-Item -Path "$env:USERPROFILE\.dbt\profiles.yml" -ItemType File -Force
+
     - name: Configure dbt profile
       run: |
-        mkdir %USERPROFILE%\.dbt\
-        echo "SF_DBT_DWH_09:
+        $profile = @"
+        SF_DBT_DWH_09:
           outputs:
             dev:
               type: snowflake
@@ -37,10 +34,12 @@ jobs:
               schema: ${{ secrets.SNOWFLAKE_SCHEMA }}
               threads: 8
               client_session_keep_alive: False
-          target: dev" > %USERPROFILE%\.dbt\profiles.yml
+          target: dev
+        "@
+        $profile | Out-File -FilePath "$env:USERPROFILE\.dbt\profiles.yml"
 
     - name: Run dbt models
-      run: dbt run --profiles-dir %USERPROFILE%\.dbt\
+      run: dbt run --profiles-dir "$env:USERPROFILE\.dbt"
 
     - name: Test dbt models
-      run: dbt test --profiles-dir %USERPROFILE%\.dbt\
+      run: dbt test --profiles-dir "$env:USERPROFILE\.dbt"
