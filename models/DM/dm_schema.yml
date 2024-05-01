@@ -45,20 +45,20 @@ models:
       - name: last_updated
         description: "Timestamp of the last update."
 
-  - name: dm_monthly_sales_performance
-    description: "Monthly sales performance tracking total sales and quantity by month, using incremental updates for efficiency."
-    columns:
-      - name: month_year
-        description: "Concatenation of the month and year of the sales."
-        tests:
-          - not_null
-          - unique
-      - name: total_quantity
-        description: "Total quantity of products sold in the month."
-      - name: total_sales
-        description: "Total sales amount for the month."
-      - name: number_of_stores
-        description: "Number of stores contributing to the sales figures."
-      - name: last_updated
-        description: "Timestamp for the most recent update."
+  # - name: dm_monthly_sales_performance
+  #   description: "Monthly sales performance tracking total sales and quantity by month, using incremental updates for efficiency."
+  #   columns:
+  #     - name: month_year
+  #       description: "Concatenation of the month and year of the sales."
+  #       tests:
+  #         - not_null
+  #         - unique
+  #     - name: total_quantity
+  #       description: "Total quantity of products sold in the month."
+  #     - name: total_sales
+  #       description: "Total sales amount for the month."
+  #     - name: number_of_stores
+  #       description: "Number of stores contributing to the sales figures."
+  #     - name: last_updated
+  #       description: "Timestamp for the most recent update."
 
