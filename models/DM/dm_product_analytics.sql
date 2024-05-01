@@ -12,4 +12,5 @@ SELECT
     MAX(s.last_updated) AS last_updated
 FROM {{ ref('stg_products') }} p
 JOIN {{ ref('stg_sales') }} s ON p.product_id = s.product_id
+
 GROUP BY p.product_id, p.product_name, p.category
