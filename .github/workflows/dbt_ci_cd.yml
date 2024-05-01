@@ -30,13 +30,13 @@ jobs:
             outputs:
               dev:
                 type: snowflake
-                account: ${{ secrets.SNOWFLAKE_ACCOUNT }}
-                user: ${{ secrets.SNOWFLAKE_USER }}
-                password: ${{ secrets.SNOWFLAKE_PASSWORD }}
-                role: ${{ secrets.SNOWFLAKE_ROLE }}
-                database: ${{ secrets.SNOWFLAKE_DATABASE }}
-                warehouse: ${{ secrets.SNOWFLAKE_WAREHOUSE }}
-                schema: ${{ secrets.SNOWFLAKE_SCHEMA }}
+                account: '${{ secrets.SNOWFLAKE_ACCOUNT }}'
+                user: '${{ secrets.SNOWFLAKE_USER }}'
+                password: '${{ secrets.SNOWFLAKE_PASSWORD }}'
+                role: '${{ secrets.SNOWFLAKE_ROLE }}'
+                database: '${{ secrets.SNOWFLAKE_DATABASE }}'
+                warehouse: '${{ secrets.SNOWFLAKE_WAREHOUSE }}'
+                schema: '${{ secrets.SNOWFLAKE_SCHEMA }}'
                 threads: 8
                 client_session_keep_alive: False
             target: dev
