@@ -18,3 +18,5 @@ SELECT
 FROM {{ ref('stg_customers') }} c
 JOIN {{ ref('stg_sales') }} s ON c.customer_id = s.customer_id
 GROUP BY c.customer_id, c.name, c.email
+
+

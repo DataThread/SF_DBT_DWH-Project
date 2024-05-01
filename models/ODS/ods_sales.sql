@@ -28,3 +28,5 @@ FROM (
 ) sales_data
 
 GROUP BY sale_date, product_id, store_id
+
+
