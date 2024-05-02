@@ -1,7 +1,7 @@
 Region_ID,Region_Name,Description
-1,North,"Includes Delhi, Haryana, Punjab, and UP"
-2,South,"Includes Karnataka, Kerala, Tamil Nadu, and Andhra Pradesh"
-3,East,"Includes West Bengal, Orissa, Bihar, and Jharkhand"
+1,North,"Includes Delhi, Haryana, Punjab, Himachal Pradesh, Jammu & Kashmir, Uttarakhand, and Uttar Pradesh"
+2,South,"Includes Karnataka, Kerala, Tamil Nadu, Telangana, and Andhra Pradesh"
+3,East,"Includes West Bengal, Odisha, Bihar, Jharkhand, and the northeastern states (excluding Assam and Sikkim)"
 4,West,"Includes Maharashtra, Goa, Gujarat, and Rajasthan"
-5,Central,"Includes Madhya Pradesh, Chhattisgarh"
-6,Northeast,"Includes Assam, Tripura, Meghalaya, and others"
+5,Central,"Includes Madhya Pradesh, Chhattisgarh, and Uttar Pradesh (partial)"
+6,Northeast,"Includes Assam, Sikkim, Meghalaya, Arunachal Pradesh, Nagaland, Manipur, Mizoram, and Tripura"

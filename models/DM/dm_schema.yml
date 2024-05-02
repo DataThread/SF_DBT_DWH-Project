@@ -78,3 +78,19 @@ models:
         description: "The average amount of daily sales for the store."
         tests:
           - not_null
+
+  - name: dm_sales_summary_by_region
+    description: "Provides a summary of sales and transaction counts by region."
+    columns:
+      - name: Region_Name
+        description: "The name of the region."
+        tests:
+          - not_null
+      - name: Avg_Sales
+        description: "Average sales amount per region."
+        tests:
+          - not_null
+      - name: Total_Transactions
+        description: "Total number of transactions recorded per region."
+        tests:
+          - not_null

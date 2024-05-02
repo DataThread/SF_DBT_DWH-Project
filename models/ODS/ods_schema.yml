@@ -164,3 +164,23 @@ models:
         description: "The count of transactions that occurred in the store on a given day."
         tests:
           - not_null
+
+  - name: ods_sales_by_region
+    description: "Aggregates sales data by region using region descriptions from seed data."
+    columns:
+      - name: Region_Name
+        description: "The name of the region where sales were made."
+        tests:
+          - not_null
+      - name: Store_ID
+        description: "The identifier of the store, assumed to map directly to a region."
+        tests:
+          - not_null
+      - name: Total_Sales
+        description: "Total sales amount for the region."
+        tests:
+          - not_null
+      - name: Number_of_Transactions
+        description: "Total number of transactions for each region."
+        tests:
+          - not_null
