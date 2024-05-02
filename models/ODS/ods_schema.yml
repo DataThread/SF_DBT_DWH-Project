@@ -142,3 +142,25 @@ models:
         description: "Timestamp when the sales data was superseded."
       - name: last_updated
         description: "Timestamp of the last update to the sales data."
+
+
+  - name: ods_daily_store_sales
+    description: "Aggregates total sales and the number of transactions per store for each day."
+    columns:
+      - name: Store_ID
+        description: "The identifier for the store."
+        tests:
+          - not_null
+          - unique
+      - name: Sale_Date
+        description: "The date on which the sales were recorded."
+        tests:
+          - not_null
+      - name: Total_Sales
+        description: "Total amount of sales for the store on a given day."
+        tests:
+          - not_null
+      - name: Transactions
+        description: "The count of transactions that occurred in the store on a given day."
+        tests:
+          - not_null

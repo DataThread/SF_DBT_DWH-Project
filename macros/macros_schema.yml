@@ -3,5 +3,15 @@ version: 2
 macros:
   - name: calculate_growth
     description: "Calculates the percentage growth between two values."
+
   - name: standardize_email
     description: "Standardizes email addresses to lowercase and trims any extra whitespace."
+
+  - name: calculate_growth
+    description: "Calculates the percentage growth between two values."
+
+  - name: standardize_email
+    description: "Standardizes email addresses to lowercase and trims any extra whitespace."
+
+  - name: log_model_execution
+    description: "Logs each model's execution by inserting the model name and row count into the model_execution_logs table after the model runs."

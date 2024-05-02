@@ -27,6 +27,9 @@ models:
   SF_DBT_DWH_09:
     pre-hook:
       - "ALTER SESSION SET TIMEZONE = 'Asia/Kolkata'"
+    post-hook:
+      - "{{ log_model_execution() }}"  # Calls the macro after each model execution
+    
 
     mart:
       +materialized: view
